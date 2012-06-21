@@ -1,7 +1,8 @@
 <?php
 /**
- * Simple script to build a podcast feed out of Radio K's "Track of the Day" blog posts
- * Requires QueryPath
+ * Simple script to build a podcast feed out of Radio K's "Track of the Day" 
+ * blog posts.
+ * Requires QueryPath (http://querypath.org)
  */
 require_once('QueryPath/QueryPath.php');
 
@@ -13,13 +14,20 @@ define('RADIOK_URL', 'http://www.radiok.org');
 define('FEED_URL', 'http://www.radiok.org/blogs/new/tag/track%20of%20the%20day');
 
 /**
- * Array of podcast items, which are, in turn, array
+ * Array of podcast items, which are, in turn, arrays
  */
 $podcast = array();
 
+// Each item in the feed has a class of "blog_post", so that's handy
 $qp = htmlqp(FEED_URL);
 foreach ($qp->find('.blog_post') as $post) {
     
+    // Traverse the post to get all the pertinent info.
+    // QueryPath has an internal pointer that's always pointing to
+    // a particular place in the DOM. Every time you query something,
+    // it moves that pointer and all future queries are relative to that.
+    // Which means that any time I drill down, I have to back out again
+    // with the parent() method.
     $pod = array();
     $h3 = $post->children('h3');
     if ($h3->size() == 0) {
