@@ -70,7 +70,7 @@ $lastBuildDate = $podcast[0]['pub_date'];
 <?xml-stylesheet type="text/xsl" href="/standard/xsl/mpr004/podcast.xsl"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
-    <title>Radio K Song of the Day</title>
+    <title>Radio K Track of the Day</title>
     <link><?php FEED_URL ?></link>
     <description>Radio K Song of the Day</description>
     <language>en-us</language>
