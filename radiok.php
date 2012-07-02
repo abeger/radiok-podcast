@@ -79,7 +79,7 @@ $lastBuildDate = $podcast[0]['pub_date'];
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
     <title>Radio K Track of the Day</title>
-    <link><?php FEED_URL ?></link>
+    <link><?php print(FEED_URL) ?></link>
     <description>Radio K Song of the Day</description>
     <language>en-us</language>
     <lastBuildDate><?php print($lastBuildDate); ?></lastBuildDate>
