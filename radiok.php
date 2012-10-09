@@ -74,8 +74,8 @@ foreach ($qp->find('.blog_post') as $post) {
 }
 $lastBuildDate = $podcast[0]['pub_date'];
 ?>
-<?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="text/xsl" href="/standard/xsl/mpr004/podcast.xsl"?>
+<?php print('<?xml version="1.0" encoding="UTF-8" ?>'); ?>
+<?php print('<?xml-stylesheet type="text/xsl" href="/standard/xsl/mpr004/podcast.xsl"?>');?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
     <title>Radio K Track of the Day</title>
